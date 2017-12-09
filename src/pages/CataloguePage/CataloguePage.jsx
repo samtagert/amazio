@@ -1,10 +1,14 @@
 import React from 'react';
 import './CataloguePage.css';
 
-const CataloguePage = () => {
+const CataloguePage = (props) => {
   return (
     <div>
-      CataloguePage
+      {props.products
+      ?
+      props.products.map((product, idx) => <li key={idx}>{product.name}</li>)
+      :
+      <h2>LOADING</h2>}
     </div>
   );
 }
